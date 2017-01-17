@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int MY_PERMISSION_REQUEST_STORAGE = 1;
     private static final String TAG = MainActivity.class.getSimpleName();
     private String selectedFilePath;
-    private String SERVER_URL = "http://1.209.45.32:8088/Android/android_upload.jsp";
+    private String SERVER_URL = "http://1.209.45.32:8088/Android/android_Connect.jsp?type=upload";
+    //private String SERVER_URL = "http://1.209.45.32:8088/Android/android_Up.jsp";
 
     ImageView ivAttachment;
     Button bUpload;
@@ -238,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 connection.setUseCaches(false);//Don't use a cached Copy
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("Connection", "Keep-Alive");
-                connection.setRequestProperty("ENCTYPE", "multipart/form-data");
+                //connection.setRequestProperty("ENCTYPE", "multipart/form-data");
                 connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
                 connection.setRequestProperty("uploaded_file",selectedFilePath);
 
